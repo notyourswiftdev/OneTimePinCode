@@ -8,12 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let pinCode = OneTimeCodeTextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        pinCode.defaultCharacter = "-"
+        pinCode.configure()
+        pinCode.didEnterLastDigit = { code in
+            print(code)
+        }
     }
-
-
 }
 
